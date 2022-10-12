@@ -1,0 +1,22 @@
+main {
+  width: 100%;
+  min-height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: green; */
+  padding: 3rem 2rem;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 3rem 0;
+}
+
+app-dogs,
+app-dog-detail {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}

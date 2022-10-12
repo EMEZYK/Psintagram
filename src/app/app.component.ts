@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+  title = 'psintagram';
+}
+
+export interface DogHTTPResult {
+  message: Record<string, string[]>;
+  mesage: string[];
+}
