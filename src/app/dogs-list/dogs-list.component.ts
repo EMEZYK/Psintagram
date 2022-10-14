@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dogs',
-  templateUrl: './dogs.component.html',
-  styleUrls: ['./dogs.component.css'],
+  templateUrl: './dogs-list.component.html',
+  styleUrls: ['./dogs-list.component.css'],
 })
-export class DogsComponent implements OnInit {
+export class DogsListComponent implements OnInit {
   dogs!: Observable<Dog[]>;
   dog!: Dog;
 
@@ -16,7 +16,6 @@ export class DogsComponent implements OnInit {
   stringifiedData: any;
 
   ngOnInit(): void {
-    console.log('on init');
     this.dogs = this.dogsService.getDogs();
   }
 
@@ -28,10 +27,4 @@ export class DogsComponent implements OnInit {
     this.dog = value;
     this.dogsService.setDog(this.dog);
   }
-
-  // setSelectedDog(dog: Dog) {
-  //   console.log('set Dog', dog);
-  //   this.dog = dog;
-  //   this.dogsService.setDog(dog);
-  // }
 }

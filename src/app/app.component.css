@@ -1,22 +1,26 @@
 main {
-  width: 100%;
-  min-height: auto;
   display: flex;
   flex-wrap: wrap;
-  /* background-color: green; */
+  width: 100%;
   padding: 3rem 2rem;
 }
 
-section {
+.header {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
   margin: 0 0 3rem 0;
 }
 
+.main-wrapper {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0 0 0;
+}
+
 app-dogs,
 app-dog-detail {
-  width: 50%;
   display: flex;
+  width: 50%;
   justify-content: center;
 }

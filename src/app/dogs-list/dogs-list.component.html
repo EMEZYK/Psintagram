@@ -1,0 +1,11 @@
+<div class="list-wrapper">
+  <div class="list-header">
+    <h3>Lista moich kolegów:</h3>
+  </div>
+  <select [(ngModel)]="selectedDog">
+    <option [ngValue]="null" disabled>Wybierz psa</option>
+    <option *ngFor="let dog of dogs | async" [ngValue]="dog">
+      {{ dog.breed }}
+    </option>
+  </select>
+</div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Dog, DogImage } from '../dog';
+import { Dog } from '../dog';
 import { DogsService } from '../dogs.service';
 
 @Component({
@@ -17,7 +16,6 @@ export class DogDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.dogsService.dog.subscribe((dog) => {
-      console.log('dog', dog);
       if (dog) {
         this.dog = dog;
         this.dogsService

@@ -4,9 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -22,10 +20,26 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('psintagram');
   });
 
-  it('should render title', () => {
+  it('should render <h2> with a properly text', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('psintagram app is running!');
+    expect(compiled.querySelector('h2')?.textContent).toContain(
+      'Pomogę Ci znaleźć moich kumpli!'
+    );
+  });
+
+  it('should render component with list of dogs', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-dogs'));
+  });
+
+  it('should render component with dog details', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('app-dog-detail'));
   });
 });

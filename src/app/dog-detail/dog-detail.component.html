@@ -1,10 +1,15 @@
-<div class="image-container">
-  <img src="{{ dogImageSrc }}" />
+<div class="details-container">
+  <div class="image-wrapper">
+    <img
+      src="{{ dogImageSrc }}"
+      onerror="src='../../assets/default_dog_photo.jpg'"
+    />
+  </div>
   <section class="description">
-    <h3>Nazwa psa</h3>
+    <h3>{{ dog.breed }}</h3>
     <div class="details">
       <p class="moreInformation">Dowiedz się o nim więcej!</p>
-      <a href="https://pl.wikipedia.org/wiki/Buldog_francuski">Kliknij tutaj</a>
+      <a href="https://pl.wikipedia.org/wiki/ {{ dog.breed }}">Kliknij tutaj</a>
     </div>
   </section>
 </div>

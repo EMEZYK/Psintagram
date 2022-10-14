@@ -20,8 +20,6 @@ function mapResult(results: DogHTTPResult): Dog[] {
 })
 export class DogsService {
   private dogsUrl = 'https://dog.ceo/api/breeds/list/all';
-  // private dogImageUrl = `https://dog.ceo/api/breed/${breed}/image/random`;
-  private dogImageUrl = `https://dog.ceo/api/breeds/image/random`;
 
   private dogBehavioralSubject = new BehaviorSubject<Dog | undefined>(
     undefined
@@ -58,7 +56,6 @@ export class DogsService {
       map(mapResult),
       tap((val) => {
         val;
-        console.log(val);
       }),
 
       catchError(this.handleError<Dog[]>('getDogs', []))
@@ -66,12 +63,8 @@ export class DogsService {
   }
 
   getImage(breed: string): Observable<DogImage> {
-    return this.http
-      .get<any>(`https://dog.ceo/api/breed/${breed}/images/random`)
-      .pipe(
-        tap((val) => {
-          console.log(`image ${val}`);
-        })
-      );
+    return this.http.get<any>(
+      `https://dog.ceo/api/breed/${breed}/images/random`
+    );
   }
 }
